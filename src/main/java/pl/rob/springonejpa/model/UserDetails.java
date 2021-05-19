@@ -19,6 +19,8 @@ public class UserDetails implements Serializable {
     @Column(name = "surname")
     private String surname;
     private String address;
+    @OneToOne(mappedBy = "details")
+    private User user;
 
     public UserDetails() {
     }
@@ -60,6 +62,10 @@ public class UserDetails implements Serializable {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public User getUser() { return user; }
+
+    public void setUser(User user) { this.user = user; }
 
     @Override
     public String toString() {

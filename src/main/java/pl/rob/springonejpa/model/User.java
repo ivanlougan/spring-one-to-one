@@ -22,6 +22,7 @@ public class User implements Serializable {
     @Column(nullable = false, unique = true)
     private String email;
     @OneToOne
+    @JoinColumn(name = "id_details")
     private UserDetails details;
 
     public User() {
